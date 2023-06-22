@@ -1,0 +1,168 @@
+{
+    "version": 2,
+    "public": false,
+    "builds": [
+        {
+            "src": "/backend/index.js",
+            "use": "@vercel/node",
+            "config": {
+                "maxLambdaSize": "50mb"
+            }
+        },
+        {
+            "src": "/frontend/build/index.html",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "/frontend/build/static/css/main.f129a816.css",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "/frontend/build/static/js/main.5be236b1.js",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "/frontend/build/manifest.json",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "/frontend/build/static/*",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "/frontend/build/images/*",
+            "use": "@vercel/static",
+            "config": {
+                "distDir": "images"
+            }
+        },
+        {
+            "src": "/frontend/build/favicon.ico",
+            "use": "@vercel/static",
+            "config": {
+                "distDir": "images"
+            }
+        },
+        {
+            "src": "/uploads/*",
+            "use": "@vercel/static",
+            "config": {
+                "distDir": "images"
+            }
+        },
+        {
+            "src": "/frontend/build/static/*/*",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "/frontend/build/static/*/*/*",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/",
+            "dest": "/frontend/build/index.html"
+        },
+        {
+            "src": "/product",
+            "dest": "/frontend/build/index.html"
+        },
+        {
+            "src": "/product/(.*)",
+            "dest": "/frontend/build/index.html"
+        },
+        {
+            "src": "/login",
+            "dest": "/frontend/build/index.html"
+        },
+        {
+            "src": "/login/(.*)",
+            "dest": "/frontend/build/index.html"
+        },
+        {
+            "src": "/register",
+            "dest": "/frontend/build/index.html"
+        },
+        {
+            "src": "/register/(.*)",
+            "dest": "/frontend/build/index.html"
+        },
+        {
+            "src": "/cart",
+            "dest": "/frontend/build/index.html"
+        },
+        {
+            "src": "/cart/(.*)",
+            "dest": "/frontend/build/index.html"
+        },
+        {
+            "src": "/payment",
+            "dest": "/frontend/build/index.html"
+        },
+        {
+            "src": "/payment/(.*)",
+            "dest": "/frontend/build/index.html"
+        },
+        {
+            "src": "/shipping",
+            "dest": "/frontend/build/index.html"
+        },
+        {
+            "src": "/shipping/(.*)",
+            "dest": "/frontend/build/index.html"
+        },
+        {
+            "src": "/placeorder",
+            "dest": "/frontend/build/index.html"
+        },
+        {
+            "src": "/placeorder/(.*)",
+            "dest": "/frontend/build/index.html"
+        },
+        {
+            "src": "/order",
+            "dest": "/frontend/build/index.html"
+        },
+        {
+            "src": "/order/(.*)",
+            "dest": "/frontend/build/index.html"
+        },
+        {
+            "src": "/api/products/(.*)",
+            "dest": "/backend/index.js"
+        },
+        {
+            "src": "/api/products",
+            "dest": "/backend/index.js"
+        },
+        {
+            "src": "/api/users/(.*)",
+            "dest": "/backend/index.js"
+        },
+        {
+            "src": "/api/users",
+            "dest": "/backend/index.js"
+        },
+        {
+            "src": "/api/orders/(.*)",
+            "dest": "/backend/index.js"
+        },
+        {
+            "src": "/api/orders",
+            "dest": "/backend/index.js"
+        },
+        {
+            "src": "/api/config/(.*)",
+            "dest": "/backend/index.js"
+        },
+        {
+            "src": "/api/config",
+            "dest": "/backend/index.js"
+        },
+        {
+            "src": "/api/config/(.*)/(.*)",
+            "dest": "/backend/index.js"
+        }
+    ]
+}
